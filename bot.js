@@ -106,9 +106,16 @@ var parseChannels = async function(inMsg, msgContent, guild){
 
     for(var ch=0; ch< trackedChannels.length; ch++){
         var messages = await trackedChannels[ch].fetchMessages({ limit: 1 });
-        var message = messages.array()[0];
 
-        channelReplies.push("<#" + message.channel.id + ">: " + message.author.username + "'s turn.");
+        if(messages.array().length >= 1){
+            var message = messages.array()[0];
+            channelReplies.push("<#" + message.channel.id + ">: " + message.author.username + " posted last.");
+
+        }else{
+            channelReplies.push("Invalid channel.");
+
+        }
+        
     }
 
     return channelReplies.join("\n");
