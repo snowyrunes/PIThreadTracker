@@ -1,0 +1,4 @@
+/node_modules
+auth.json
+tauth.json
+log_exports/*
