@@ -40,7 +40,7 @@ bot.on('message', inMsg => {
 
         args = args.splice(1);
 
-        if (cmd == "getthreads"){
+        if (cmd == "threads"){
             var trackingChannel = null;
             //console.log(guild.channels);
             var guildChannels = guild.channels.array();
